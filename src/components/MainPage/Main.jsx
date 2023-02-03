@@ -1,17 +1,23 @@
 import React, { useState, useRef } from "react";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import * as yup from "yup";
+import { setEmailAC } from "../../redux/reducer";
 
 const Main = () => {
   const [email, setEmail] = useState("");
   const [touched, setTouched] = useState(false);
   const navigate = useNavigate();
   const inputRef = useRef();
+  const dispatch = useDispatch();
 
   //Validation
   const schema = yup.object().shape({
-    email: yup.string().email().required(),
+    email: yup
+    .string()
+    .email()
+    .required('Email is required'),
   });
 
   const handleSubmit = async (e) => {
@@ -21,8 +27,9 @@ const Main = () => {
     };
 
     try {
-      const isTouched = await schema.validate(userEmail);
-      console.log(isTouched);
+      const validated = await schema.validate(userEmail);
+      console.log(validated);
+      dispatch(setEmailAC(email));
       navigate("/signup");
     } catch (e) {
       console.error(e);
@@ -66,7 +73,7 @@ const Main = () => {
                 color: '#ffa00a'
               }}
             >
-              Email is requied!
+              Email is required!
             </p>
           ) : null}
         </form>

@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import Question from "./Question";
 import * as yup from "yup";
+import { setEmailAC } from "../../redux/reducer";
+import { useDispatch } from "react-redux";
 
 const Questions = () => {
   const QA = [
@@ -47,6 +49,7 @@ const Questions = () => {
   const [email, setEmail] = useState("");
   const [touched, setTouched] = useState(false);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   //Validation
   const inputRef = useRef();
@@ -62,7 +65,7 @@ const Questions = () => {
 
     try {
       const isTouched = await schema.validate(userEmail);
-      console.log(isTouched);
+      dispatch(setEmailAC(email));
       navigate("/signup");
     } catch (e) {
       console.error(e);

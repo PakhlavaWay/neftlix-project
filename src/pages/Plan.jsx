@@ -4,11 +4,14 @@ import Footer from "../components/Footer";
 import Header from "../components/Signup/Header";
 import DoneIcon from '@mui/icons-material/Done';
 import Button from '../components/Button';
+import { useSelector } from 'react-redux';
+
 
 const Plan = () => {
+  const isAuthorized = useSelector((state) => state.isAuthorized);
   return (
     <Component>
-        <Header action='Sign Out'/>
+        <Header action={isAuthorized ? 'Sign Out': 'Sign In'}/>
             <section className="main">
                 <div className="main__img-container">
                     <img src="https://assets.nflxext.com/ffe/siteui/acquisition/simplicity/Checkmark.png" alt="icon" />

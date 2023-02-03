@@ -5,6 +5,7 @@ import Header from "../components/Signup/Header";
 import LockIcon from "@mui/icons-material/Lock";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import Button from "../components/Button";
+import { useSelector } from "react-redux";
 
 const Payment = () => {
   const [paymentMethod, setPaymentMethod] = useState("");
@@ -12,10 +13,11 @@ const Payment = () => {
     setPaymentMethod(method);
     console.log(method);
   };
+  const isAuthorized = useSelector((state) => state.isAuthorized);
 
   return (
     <Component>
-      <Header action="Sign Out" />
+      <Header action={isAuthorized ? 'Sign Out': 'Sign In'} />
       <section className="main">
         <div className="main__img-container">
           <img

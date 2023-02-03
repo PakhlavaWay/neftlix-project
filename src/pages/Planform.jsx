@@ -6,16 +6,18 @@ import DoneIcon from "@mui/icons-material/Done";
 import RemoveIcon from "@mui/icons-material/Remove";
 import LockIcon from "@mui/icons-material/Lock";
 import Button from "../components/Button";
+import { useSelector } from "react-redux";
 
 const Planform = () => {
   const [activePlan, setActivePlan] = useState("standard");
   const handleClick = (plan) => {
     setActivePlan(plan);
   }
+  const isAuthorized = useSelector((state) => state.isAuthorized);
 
   return (
     <Component>
-      <Header action='Sign Out'/>
+      <Header action={isAuthorized ? 'Sign Out': 'Sign In'}/>
       <section className="main">
         <div className="main__plan-intro">
           <p>
