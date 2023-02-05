@@ -1,12 +1,12 @@
 import "./index.css";
-import MainPage from "./pages/MainPage";
-import Login from "./pages/Login";
+import MainPage from "./pages/guest/MainPage";
+import Login from "./pages/guest/Login";
 import { Routes, Route } from 'react-router-dom';
-import Signup from "./pages/Signup";
-import Regform from "./pages/Regform";
-import Plan from "./pages/Plan";
-import Planform from "./pages/Planform";
-import Payment from "./pages/Payment";
+import Signup from "./pages/guest/Signup";
+import Regform from "./pages/guest/Regform";
+import Plan from "./pages/guest/Plan";
+import Planform from "./pages/guest/Planform";
+import Payment from "./pages/guest/Payment";
 
 
 

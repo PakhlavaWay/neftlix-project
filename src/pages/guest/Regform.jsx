@@ -1,17 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
-import Footer from "../components/Footer";
-import Header from "../components/Signup/Header";
+import Footer from "../../components/Footer";
+import Header from "../../components/Signup/Header";
 import { useDispatch, useSelector } from "react-redux";
-import { setAuthAC, setEmailAC, setPasswordAC } from "../redux/reducer";
+import { setEmailAC } from "../../redux/reducer";
 import { useNavigate } from "react-router-dom";
-import { schema } from "../validation/schema";
+import { schema } from '../../validation/schema';
 import { useFormik } from "formik";
-import axios from '../api/axios';
+import axios from "../../api/axios";
 
 const Regform = () => {
-  const email = useSelector((state) => state.userData.email);
-  const password = useSelector((state) => state.userData.password);
+  const email = useSelector((state) => state.user.email);
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -20,8 +19,7 @@ const Regform = () => {
     console.log('submited');
     await new Promise((res) => setTimeout(res, 1000));
     dispatch(setEmailAC(values.email));
-    dispatch(setPasswordAC(values.password));
-    dispatch(setAuthAC(true));
+    // dispatch(setPasswordAC(values.password));
 
     signUp(values);
     navigate("/signup/plan");
@@ -29,10 +27,10 @@ const Regform = () => {
   }
   const { values, errors, touched, isSubmitting, handleChange, handleBlur, handleSubmit } = useFormik({
     initialValues: {
-        email: email || "",
-        password: "",
-        age: "", // for fake api
-        name: "" // for fake api
+      age: "19", // for fake api
+      email: email || "",
+      name: "J", // for fake api
+      password: "",
     },
 
     //Validation
@@ -41,15 +39,17 @@ const Regform = () => {
   })
 
   const signUp = async (user) => {
+
     try {
-        const result = await axios.post('/signup', JSON.stringify(user));
-        console.log(result.data.message);
-        return result;
+      const result = await axios.post('/signup', JSON.stringify(user));
+      console.log(result);
+      console.log(result.data.message);
+      return result;
     }
     catch(e) {
         console.log(e.erros)
         console.log(user);
-        console.log(JSON.stringify(user, null, 2));
+        console.log(JSON.stringify(user));
     }
   }
 

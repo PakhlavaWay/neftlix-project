@@ -1,19 +1,54 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
-import Header from '../components/Login/Header';
-import Footer from '../components/Footer';
+import Header from '../../components/Login/Header';
+import Footer from '../../components/Footer';
+import axios from '../../api/axios';
+import { useDispatch } from 'react-redux';
+import { setAuthAC, setUserAC } from '../../redux/reducer';
 
 const Login = () => {
   const [values, setValues] = useState({email: '', password: ''});
+  const dispatch = useDispatch();
 
-  const handleSubmit = () => {
+  const loginUser = async (data) => {
+    try {
+        const result = await axios.post('/signin', JSON.stringify(data));
+        if (result.status === 200) {
+            console.log(result);
+            localStorage.setItem('token', result.data.accessToken);
+            dispatch(setUserAC({
+                id: result.data.user.id,
+                name: result.data.user.name,
+                email: result.data.user.email,
+                age: result.data.user.age,
+            }));
+            dispatch(setAuthAC(true));
+            setValues({email: "", password: ""});
+            
+            return result;
+        }
+        else {
+            console.log(result)
+        }
 
+    }
+    catch(e) {
+        console.log(e.message);
+        console.log(e);
+        console.log(JSON.stringify(data));
+    }
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    loginUser(values);
   } 
 
   const handleChange = (data) => {
     setValues({...values, [data.name]: data.value})
   }
+
 
   return (
     <Component className='login'>

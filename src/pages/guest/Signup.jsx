@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import Button from '../components/Button';
-import Footer from '../components/Footer';
-import Header from '../components/Signup/Header';
+import Button from '../../components/Button';
+import Footer from '../../components/Footer';
+import Header from '../../components/Signup/Header';
 
 const Signup = () => {
   return (

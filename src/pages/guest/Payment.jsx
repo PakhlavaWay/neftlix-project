@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import Footer from "../components/Footer";
-import Header from "../components/Signup/Header";
+import Footer from "../../components/Footer";
+import Header from "../../components/Signup/Header";
 import LockIcon from "@mui/icons-material/Lock";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
-import Button from "../components/Button";
+import Button from "../../components/Button";
 import { useSelector } from "react-redux";
 
 const Payment = () => {

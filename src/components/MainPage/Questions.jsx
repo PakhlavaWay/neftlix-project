@@ -64,7 +64,7 @@ const Questions = () => {
     };
 
     try {
-      const isTouched = await schema.validate(userEmail);
+      await schema.validate(userEmail);
       dispatch(setEmailAC(email));
       navigate("/signup");
     } catch (e) {
