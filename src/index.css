@@ -1,4 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
+
+@layer components {
+  /* html {
+    @apply sm:text-sm md:text-base lg:text-lg;
+  } */
+}
 
 html, 
 *, 
@@ -101,7 +111,7 @@ a:hover {
 
 button {
   border: none;
-  background-color: #e50914;
+  background-color: #e50914!important;
   color: white;
 }
 

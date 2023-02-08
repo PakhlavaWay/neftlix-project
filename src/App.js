@@ -7,6 +7,8 @@ import Regform from "./pages/guest/Regform";
 import Plan from "./pages/guest/Plan";
 import Planform from "./pages/guest/Planform";
 import Payment from "./pages/guest/Payment";
+import MainPageUser from "./pages/user/MainPageUser";
+import CheckAuthorized from "./components/CheckAuthorized";
 
 
 
@@ -23,6 +25,8 @@ function App() {
         <Route path="/signup/plan" element={<Plan />}/>
         <Route path="/signup/planform" element={<Planform />}/>
         <Route path="/signup/payment" element={<Payment />}/>
+        <Route path="/browse" element={CheckAuthorized(MainPageUser)}/>
+
       </Routes>
     </div>
   );

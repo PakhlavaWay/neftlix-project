@@ -29,7 +29,7 @@ const Regform = () => {
     initialValues: {
       age: "19", // for fake api
       email: email || "",
-      name: "J", // for fake api
+      name: "Jasper", // for fake api
       password: "",
     },
 
@@ -206,13 +206,13 @@ const Component = styled.section`
           }
 
           &:focus ~ label {
-            top: 0;
+            top: -4px;
             font-size: 0.8rem;
             font-weight: 700;
           }
 
           &:not(:placeholder-shown) ~ label {
-            top: 0;
+            top: -4px;
             font-size: 0.8rem;
             font-weight: 700;
           }
@@ -222,7 +222,7 @@ const Component = styled.section`
           z-index: 2;
           pointer-events: none;
           transform: translateY(50%);
-          top: 10px;
+          top: 6px;
           padding: 0 10px;
           color: #8c8c8c;
           font-size: 1rem;

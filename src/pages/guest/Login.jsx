@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import Header from '../../components/Login/Header';
 import Footer from '../../components/Footer';
 import axios from '../../api/axios';
@@ -10,6 +10,7 @@ import { setAuthAC, setUserAC } from '../../redux/reducer';
 const Login = () => {
   const [values, setValues] = useState({email: '', password: ''});
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const loginUser = async (data) => {
     try {
@@ -17,6 +18,7 @@ const Login = () => {
         if (result.status === 200) {
             console.log(result);
             localStorage.setItem('token', result.data.accessToken);
+            localStorage.setItem('userName', result.data.user.name);
             dispatch(setUserAC({
                 id: result.data.user.id,
                 name: result.data.user.name,
@@ -25,8 +27,7 @@ const Login = () => {
             }));
             dispatch(setAuthAC(true));
             setValues({email: "", password: ""});
-            
-            return result;
+            navigate('/browse');
         }
         else {
             console.log(result)
@@ -137,12 +138,12 @@ const Component = styled.section`
                         caret-color: white;
                         
                         &:focus~label {
-                            top: 0;
+                            top: -4px;
                             font-size: 0.65rem;
                         }    
 
                         &:not(:placeholder-shown)~label {
-                            top: 0;
+                            top: -4px;
                             font-size: 0.65rem;
                         }
 
@@ -153,7 +154,7 @@ const Component = styled.section`
                         pointer-events: none;
                         transform: translateY(50%);
                         left: 20px;
-                        top: 8px;
+                        top: 4px;
                         color: #8c8c8c;
                         font-size: 0.9rem;
                         transition: font .1s ease,top .1s ease,transform .1s ease;
