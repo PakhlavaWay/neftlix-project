@@ -4,6 +4,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
 
+
 @layer components {
   /* html {
     @apply sm:text-sm md:text-base lg:text-lg;
@@ -136,3 +137,34 @@ select:-webkit-autofill {
   -webkit-box-shadow: 0 0 0 1000px white inset !important;
   -webkit-text-fill-color: black !important;
 }
+
+/* Swiper */
+
+.swiper {
+  width: 100vw;
+  height: 14vw;
+}
+
+.swiper-wrapper, .swiper-scrollbar {
+  margin-left: 4rem;
+}
+
+.swiper-button-prev, .swiper-button-next {
+  display: none!important;
+  margin: 0 10px;
+}
+
+.swiper-button-next::after, .swiper-button-prev::after {
+  color: white!important;
+  font-size: 3vw!important;
+}
+
+.swiper:hover .swiper-button-prev, .swiper:hover .swiper-button-next {
+  display: block!important;
+}
+
+.swiper:hover {
+  cursor: pointer;
+}
+
+

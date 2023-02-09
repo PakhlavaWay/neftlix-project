@@ -13,8 +13,8 @@ import CheckAuthorized from "./components/CheckAuthorized";
 
 
 
-function App() {
 
+function App() {
   return (
     <div className="App">
       <Routes>

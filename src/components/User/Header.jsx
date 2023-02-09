@@ -21,7 +21,7 @@ const Header = () => {
           <NavLink to="/">My List</NavLink>
           <NavLink to="/">Browse by Languages</NavLink>
         </nav>
-        <div className="flex basis-3/12 gap-3">
+        <div className="flex basis-3/12 gap-4">
           <SearchIcon className="ml-auto"/>
           <NavLink to="/">Kids</NavLink>
           <NavLink to="/">DVD</NavLink>

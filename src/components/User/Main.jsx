@@ -2,6 +2,8 @@ import React from "react";
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import InfoIcon from '@mui/icons-material/Info';
 import ReplayIcon from '@mui/icons-material/Replay';
+import Slider from './Slider';
+import movies from '../../images/movies';
 
 
 const Main = () => {
@@ -30,6 +32,7 @@ const Main = () => {
             <div className="!bg-zinc-500 opacity-80 text-white border-l-4 px-2 pr-8 py-1">PG-13</div>
         </div>
       </div>
+      <Slider absolute={true} collection={"Popular on Netflix"} moviesImg={movies.popular} />
     </section>
   );
 };
