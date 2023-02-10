@@ -4,9 +4,9 @@ import styled from "styled-components";
 const Enjoy = () => {
   return (
     <Component>
-      <section className="enjoy wrapper">
+      <section className="enjoy wrapper enjoy-create">
         
-        <div className="enjoy__text">
+        <div className="enjoy__text enjoy-create-text">
           <h1 style={{ marginBottom: "1rem" }}>Enjoy on your TV.</h1>
           <p>
             Watch on Smart TVs, Playstation, Xbox, Chromecast, Apple TV,
@@ -42,12 +42,13 @@ const Component = styled.div`
   background-color: #000;
   border-bottom: 8px solid #222;
   section {
-    height: 70vh;
+    height: auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
     column-gap: 25px;
     max-width: 1100px;
+    padding: 50px 0;
     .enjoy__text {
       width: 48%;
     }

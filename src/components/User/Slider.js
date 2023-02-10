@@ -8,10 +8,10 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 
-const Slider = ({ collection, moviesImg, absolute, ...props }) => {
+const Slider = ({ collection, moviesImg, absolute, className }) => {
   return (
-    <div className={absolute ? "absolute -bottom-16": props.className}>
-      <p className="text-[1.4vw] leading-[1.25vw] mb-3 font-bold ml-16">{collection}</p>
+    <div className={absolute ? 'absolute top-[40vw]' : className}>
+      <p className="text-[1.2vw] leading-[1.25vw] mb-3 font-bold !ml-16">{collection}</p>
       <Swiper
         // install Swiper modules
         modules={[Navigation, Pagination, Scrollbar, A11y]}

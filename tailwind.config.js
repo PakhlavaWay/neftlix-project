@@ -4,7 +4,16 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      screens: {
+        xxs: '320px',
+        xs: '480px',
+        xlg: '960px',
+      },
+      gridTemplateColumns: {
+        footer: 'repeat(auto-fill, minmax(150px, 1fr))',
+      }
+    },
   },
   plugins: [],
 }

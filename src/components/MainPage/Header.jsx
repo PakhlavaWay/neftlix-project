@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from "../../images/netflix-logo.png";
 import styled from "styled-components";
 import LanguageIcon from "@mui/icons-material/Language";
 import { NavLink } from "react-router-dom";
-
+import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
+import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
 
 const Header = () => {
+  const [language, setLanguage] = useState("English");
+  const [langMode, setLangMode] = useState(false);
   return (
     <Component className="wrapper">
       <header
@@ -20,13 +23,25 @@ const Header = () => {
           />
         </div>
         <div className="header__sign-in">
-          <div>
+          <div
+            onClick={() => setLangMode(!langMode)}
+            className="hover:cursor-pointer relative !h-12"
+          >
             <LanguageIcon style={{ color: "white", height: "1rem" }} />
-            <select name="lang" id="lang">
-              <option value="english">English</option>
-              <option value="espanol">Espanol</option>
-              
-            </select>
+            <div className="text-white !border-none xxs:!hidden sm:!block">{language}</div>
+            <div
+              className={`select !border-4 !border-solid !bg-white ${
+                langMode ? "!absolute top-10 right-0 !flex !flex-col !justify-center" : "!hidden"
+              }`}
+            >
+              <p className="!text-base !text-gray-500 hover:!text-gray-700" onClick={() => setLanguage("English")}>English</p>
+              <p className="!text-base !text-gray-500 hover:!text-gray-700" onClick={() => setLanguage("Espanol")}>Espanol</p>
+            </div>
+            {langMode ? (
+              <ArrowDropUpIcon className="text-white" />
+            ) : (
+              <ArrowDropDownIcon className="text-white" />
+            )}
           </div>
           <NavLink to="/login">Sign In</NavLink>
         </div>
@@ -55,23 +70,6 @@ const Component = styled.div`
         padding: 3px;
         border-radius: 5px;
         position: relative;
-
-        select {
-          color: white;
-          background-color: transparent;
-          border: none;
-          font-size: 1rem;
-          white-space: nowrap;
-          appearance: none;
-          padding-right: 25px;
-          background: 
-          url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAICAYAAADJEc7MAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAABkSURBVHgBlc9dDYAwDATgwwESJgUJoAALOEACUiYFCUiYhHKQPnTZ/yXdw7avaScRmQF4jGX7T+JL+nNGLXjhO1A62Tcy666gR9dCDjv9kEMOtSgOBoUmMngxcMVICA7WXnp/Afu+yQgieRTPAAAAAElFTkSuQmCC') 
-          no-repeat 90% center;
-
-          option {
-            background-color: gray;
-          }
-        }
       }
       a {
         padding: 10px 15px;

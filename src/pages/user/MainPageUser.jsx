@@ -6,12 +6,12 @@ import Movies from '../../components/User/Movies';
 
 const MainPageUser = () => {
   return (
-    <>
+    <div className='main__user'>
         <Header />
         <Main />
         <Movies />
         <Footer/>
-    </>
+    </div>
   )
 }
 

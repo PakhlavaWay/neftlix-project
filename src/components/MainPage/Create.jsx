@@ -4,8 +4,8 @@ import styled from "styled-components";
 const Create = () => {
   return (
     <Component>
-      <section className="create wrapper">
-        <div className="create__text">
+      <section className="create wrapper enjoy-create">
+        <div className="create__text enjoy-create-text">
           <h1 style={{ marginBottom: "1rem" }}>Create profiles for kids.</h1>
           <p>
             Send kids on adventures with their favorite characters in a space
@@ -27,11 +27,12 @@ const Component = styled.div`
   background-color: #000;
   border-bottom: 8px solid #222;
   section {
-    height: 70vh;
+    height: auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
     column-gap: 25px;
+    padding: 50px 0;
     .create__text {
       width: 48%;
       height: auto;

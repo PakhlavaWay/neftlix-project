@@ -14,10 +14,7 @@ const Main = () => {
 
   //Validation
   const schema = yup.object().shape({
-    email: yup
-    .string()
-    .email()
-    .required('Email is required'),
+    email: yup.string().email().required("Email is required"),
   });
 
   const handleSubmit = async (e) => {
@@ -40,7 +37,7 @@ const Main = () => {
 
   return (
     <Component>
-      <main className="main wrapper">
+      <main className="main__guest-page wrapper">
         <h1>
           Unlimited movies, TV <br /> shows, and more.
         </h1>
@@ -48,21 +45,22 @@ const Main = () => {
         <p>
           Ready to watch? Enter your email to create or restart your membership.
         </p>
-        <form className="get-started" onSubmit={handleSubmit}>
-          <div className="input-container">
-            <input
-              ref={inputRef}
-              type="email"
-              id="email"
-              name="email"
-              placeholder=" "
-              onChange={(e) => setEmail(e.target.value)}
-              value={email}
-            />
-            <label htmlFor="email">Email address</label>
+        <form onSubmit={handleSubmit}>
+          <div className="get-started">
+            <div className="input-container">
+              <input
+                ref={inputRef}
+                type="email"
+                id="email"
+                name="email"
+                placeholder=" "
+                onChange={(e) => setEmail(e.target.value)}
+                value={email}
+              />
+              <label htmlFor="email">Email address</label>
+            </div>
           </div>
-
-          <button type="submit">Get Started</button>
+          <button type="submit">Get Started 〉</button>
           {touched ? (
             <p
               style={{
@@ -70,7 +68,7 @@ const Main = () => {
                 position: "absolute",
                 bottom: "-25px",
                 left: "0",
-                color: '#ffa00a'
+                color: "#ffa00a",
               }}
             >
               Email is required!
@@ -83,12 +81,12 @@ const Main = () => {
 };
 
 const Component = styled.div`
-  height: 105vh;
+  height: clamp(70vh, 55vw, 100vh);
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6)),
     url("https://assets.nflxext.com/ffe/siteui/vlv3/e451379a-dd0a-4657-b530-4ca4c0cb2aee/ec9e1d98-e04b-437a-9479-ea531261184f/US-en-20230123-popsignuptwoweeks-perspective_alpha_website_large.jpg");
   background-size: cover;
   border-bottom: 8px solid #222;
-  .main {
+  .main__guest-page {
     height: inherit;
     width: 100%;
     display: flex;
@@ -106,66 +104,67 @@ const Component = styled.div`
       font-size: 1.6rem;
     }
 
-    .get-started {
+    form {
+      width: 70%;
+      height: auto;
       display: flex;
       justify-content: center;
-      height: 60px;
-      width: 55%;
-      background-color: white;
-      position: relative;
-      .input-container {
+      align-items: center;
+      .get-started {
+        margin: 0 auto;
+        height: 100%;
+        width: 100%;
+        background-color: white;
         position: relative;
-        height: 80%;
-        width: 70%;
-        align-self: end;
+        .input-container {
+          position: relative;
+          height: 80%;
+          width: 70%;
+          align-self: end;
 
-        & input {
-          height: 100%;
-          width: 100%;
-          padding: 10px 8px;
-          border: none;
-          outline: none;
+          & input {
+            height: 100%;
+            width: 100%;
+            padding: 10px 8px;
+            border: none;
+            outline: none;
 
-          &:focus ~ label {
-            top: 0;
-            font-size: 0.8rem;
-            font-weight: 700;
+            &:focus ~ label {
+              top: 0;
+              font-size: 0.8rem;
+              font-weight: 700;
+            }
+
+            &:not(:placeholder-shown) ~ label {
+              top: 0;
+              font-size: 0.8rem;
+              font-weight: 700;
+            }
           }
 
-          &:not(:placeholder-shown) ~ label {
-            top: 0;
-            font-size: 0.8rem;
-            font-weight: 700;
+          & label {
+            color: #8c8c8c;
+            position: absolute;
+            top: 35%;
+            padding: 0 8px;
+            pointer-events: none;
+            left: 0;
+            transform: translateY(-50%);
+            font-size: 0.9rem;
+            transition: font 0.1s ease, top 0.1s ease, transform 0.1s ease;
           }
-        }
-
-        & label {
-          color: #8c8c8c;
-          position: absolute;
-          top: 35%;
-          padding: 0 8px;
-          pointer-events: none;
-          left: 0;
-          transform: translateY(-50%);
-          font-size: 0.9rem;
-          transition: font 0.1s ease, top 0.1s ease, transform 0.1s ease;
         }
       }
-
       button {
         width: 30%;
         min-width: 170px;
         box-shadow: 0 1px 0 rgb(0 0 0 / 45%);
         font-size: 1.6rem;
-        position: relative;
+        // position: relative;
         padding: 5px;
-
-        &::after {
-          content: "〉";
-          position: absolute;
-          margin-left: 5px;
-          bottom: 16px;
-        }
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
     }
   }

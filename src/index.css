@@ -6,9 +6,40 @@
 
 
 @layer components {
-  /* html {
-    @apply sm:text-sm md:text-base lg:text-lg;
-  } */
+  /* user page(not guest) */
+  html:has(.main__user){
+    @apply xs:text-[1.13vw] md:text-[1.15vw] lg:text-[1.2vw] xl:text-[1.25vw] 2xl:text-[1.4vw];
+  }
+  /* main guest page */
+  .main__guest-page h1 {
+    @apply xxs:text-[1.5rem] xs:text-[2rem] md:text-[2.7rem] xlg:text-[3rem] lg:text-[3.1rem] xl:text-[3.2rem] 2xl:text-[3.3rem];
+  }
+  form:has(.get-started) {
+    @apply xxs:!flex-col xxs:!gap-1 md:!flex-row md:!gap-0;
+  }
+  /* enjoy and create sections*/
+  .enjoy-create {
+    @apply xxs:flex-col xxs:!justify-center xlg:flex-row xlg:!justify-between
+  }
+  .enjoy-create-text {
+    @apply xxs:text-center xlg:text-left xxs:!w-full xlg:!w-[48%]
+  }
+  /* watch and download sections*/
+  .watch-download {
+    @apply xxs:flex-col-reverse xxs:!justify-center xlg:flex-row xlg:!justify-between
+  }
+
+  .download__movie-title p:nth-child(1) {
+    @apply xxs:text-[.9rem] xlg:text-[1.3rem]
+  }
+
+  .watch-download-text {
+    @apply xxs:text-center xlg:text-left xxs:!w-full xlg:!w-[48%]
+  }
+
+  html, body {
+    overflow-x: hidden!important;
+  }
 }
 
 html, 
@@ -22,13 +53,16 @@ html,
 
 html {
   font-family: 'Lato', sans-serif;
-  overflow-x: hidden;
 }
 
-/* body, html {
-  height: intial !important; 
-  min-height: 100% !important;
-} */
+::-webkit-scrollbar {
+  background: white;
+}
+
+/* Style the scrollbar handle */
+::-webkit-scrollbar-thumb {
+  background: darkgrey;;
+}
 
 .wrapper {
   width: 90%;
@@ -58,17 +92,15 @@ p {
   margin-top: 5px;
   padding: 0.8em 1.2em 0.8em 1.2em;
   width: 100%;
-  background: #303030;
+  /* background: #303030!important; */
   display: flex;
   justify-content: space-between;
   align-items: center;
   color: white;
   font-size: 1.7rem;
+  text-align: start;
 }
 
-.question:hover {
-  background: #303030;
-}
 
 .question__container {
   position: relative;
@@ -116,6 +148,7 @@ button {
   color: white;
 }
 
+
 button:hover {
   background-color: red;
 }
@@ -162,6 +195,7 @@ select:-webkit-autofill {
 .swiper:hover .swiper-button-prev, .swiper:hover .swiper-button-next {
   display: block!important;
 }
+
 
 .swiper:hover {
   cursor: pointer;

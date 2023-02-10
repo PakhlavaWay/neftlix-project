@@ -4,7 +4,7 @@ import styled from "styled-components";
 const Watch = () => {
   return (
     <Component>
-      <section className="watch wrapper">
+      <section className="watch wrapper watch-download">
         <div className="watch__image">
           <img
             src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/device-pile.png"
@@ -25,7 +25,7 @@ const Watch = () => {
             </video>
           </div>
         </div>
-        <div className="watch__text">
+        <div className="watch__text watch-download-text">
           <h1 style={{ marginBottom: "1rem" }}>Watch everywhere.</h1>
           <p>
             Stream unlimited movies and TV shows on <br /> your phone, tablet,
@@ -41,11 +41,13 @@ const Component = styled.div`
   background-color: #000;
   border-bottom: 8px solid #222;
   section {
-    height: 70vh;
+    // height: 70vh;
+    height: auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
     column-gap: 25px;
+    padding: 50px 0;
 
     .watch__image {
       position: relative;

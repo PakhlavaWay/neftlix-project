@@ -10,10 +10,6 @@ import Payment from "./pages/guest/Payment";
 import MainPageUser from "./pages/user/MainPageUser";
 import CheckAuthorized from "./components/CheckAuthorized";
 
-
-
-
-
 function App() {
   return (
     <div className="App">

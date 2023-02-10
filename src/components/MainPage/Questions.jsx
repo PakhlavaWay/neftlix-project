@@ -110,7 +110,7 @@ const Questions = () => {
               <label htmlFor="email">Email address</label>
             </div>
 
-            <button type="submit">Get Started</button>
+            <button type="submit">Get Started 〉</button>
             {touched ? (
               <p
                 style={{
@@ -190,15 +190,11 @@ const Component = styled.div`
           width: 30%;
           min-width: 170px;
           font-size: 1.6rem;
-          position: relative;
+          // position: relative;
           padding: 5px;
-
-          &::after {
-            content: "〉";
-            position: absolute;
-            margin-left: 5px;
-            bottom: 16px;
-          }
+          display: flex;
+          align-items: center;
+          justify-content: center;
         }
       }
     }

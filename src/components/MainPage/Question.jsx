@@ -7,7 +7,7 @@ const Question = ({ question, answer }) => {
 
   return (
     <section className="question__container">
-      <button className="question" onClick={() => setIsActive(!isActive)}>
+      <button className="question !bg-[#303030] hover:!bg-neutral-700" onClick={() => setIsActive(!isActive)}>
         {question}
         { !isActive ? <AddIcon style={{ fontSize: "2.2rem" }}/> : <CloseIcon style={{ fontSize: "2.2rem" }} /> }
       </button>
