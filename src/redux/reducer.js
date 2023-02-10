@@ -4,7 +4,7 @@ const SET_EMAIL = 'SET_EMAIL';
 
 const defaultState = {
     user: {},
-    isAuthorized: true,
+    isAuthorized: false,
 };
 
 export const reducer = (state = defaultState, action) => {

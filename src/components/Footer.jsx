@@ -6,13 +6,13 @@ import LanguageIcon from "@mui/icons-material/Language";
 const Footer = ({ bgColor, bTop }) => {
   return (
     <Component style={{ backgroundColor: bgColor, borderTop: bTop ? "1px solid #e6e6e6" : 'none' }}>
-      <section className="wrapper">
+      <section className="wrapper grid grid-rows-footer">
         <div className="footer__questions">
-          <p>
+          <p className="mb-2">
             Questions? Call <a href="tel:+18445052993">1-844-505-2993</a>
           </p>
         </div>
-        <nav className="footer__links">
+        <nav className="footer__links grid grid-cols-footer">
           <div className="footer__link">
             <NavLink>FAQ</NavLink>
             <NavLink>Cookie Preferences</NavLink>
@@ -40,18 +40,15 @@ const Footer = ({ bgColor, bTop }) => {
 };
 
 const Component = styled.footer`
-    height: 40vh;
+    height: auto;
+    max-height: 500px;
     position: absolute;
     z-index: 3;
     bottom: 0;
     width: 100%;
-    // background: rgba(0,0,0,.75);
-
     section {
-        display: grid;
-        grid-template-rows: 0.7fr 1fr 1fr;
         padding: 30px 40px;
-        height: 100%;
+        height: inherit;
         p {
             color: #737373;
             font-size: 1rem;
@@ -62,12 +59,7 @@ const Component = styled.footer`
         }
 
         .footer__links {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr 1fr;
             column-gap: 10px;
-            div {
-                
-            }
             a {
                 color: #737373;
                 font-size: 0.81rem;

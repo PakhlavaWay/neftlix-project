@@ -50,19 +50,28 @@ const Planform = () => {
             <div className="plans__prices plan">
               <p className="plans__props">Monthly price</p>
               <p className={"plans__price plan-item " + ((activePlan)==='basic' ? "active": "")}>$6.99</p>
-              <p className={"plans__price plan-item " + ((activePlan)==='standard' ? "active": "")}>$15.49</p>
+              <p className={"plans__price plan-item " + ((activePlan)==='standard' ? "active": "")}>
+                <div className="resp-desc hidden">Montly price</div>
+                $15.49
+              </p>
               <p className={"plans__price plan-item " + ((activePlan)==='premium' ? "active": "")}>$19.99</p>
             </div>
             <div className="plans__qualities plan">
               <p className="plans__props">Video quality</p>
               <p className={"plans__quality plan-item " + ((activePlan)==='basic' ? "active": "")}>Good</p>
-              <p className={"plans__quality plan-item " + ((activePlan)==='standard' ? "active": "")}>Better</p>
+              <p className={"plans__quality plan-item " + ((activePlan)==='standard' ? "active": "")}>
+                <div className="resp-desc hidden">Video Quality</div>
+                Better
+              </p>
               <p className={"plans__quality plan-item " + ((activePlan)==='premium' ? "active": "")}>Best</p>
             </div>
             <div className="plans__resolutions plan">
               <p className="plans__props">Resolution</p>
               <p className={"plans__resolution plan-item " + ((activePlan)==='basic' ? "active": "")}>720p</p>
-              <p className={"plans__resolution plan-item " + ((activePlan)==='standard' ? "active": "")}>1080p</p>
+              <p className={"plans__resolution plan-item " + ((activePlan)==='standard' ? "active": "")}>
+              <div className="resp-desc hidden">Resolution</div>
+                1080p
+              </p>
               <p className={"plans__resolution plan-item " + ((activePlan)==='premium' ? "active": "")}>4K+HDR</p>
             </div>
             <div className="plans__devices plan">
@@ -71,12 +80,14 @@ const Planform = () => {
               </p>
               <DoneIcon className={"plan-item icon " + ((activePlan)==='basic' ? "active": "")}/>
               <DoneIcon className={"plan-item icon " + ((activePlan)==='standard' ? "active": "")}/>
+              <div className="resp-desc hidden">Watch on your TV, computer, mobile phone and tablet</div>
               <DoneIcon className={"plan-item icon " + ((activePlan)==='premium' ? "active": "")}/>
             </div>
             <div className="plans__downloads plan last">
               <p className="plans__props">Downloads</p>
               <RemoveIcon className={"plan-item icon " + ((activePlan)==='basic' ? "active": "")}/>
               <DoneIcon className={"plan-item icon " + ((activePlan)==='standard' ? "active": "")}/>
+              <div className="resp-desc hidden">Downloads</div>
               <DoneIcon className={"plan-item icon " + ((activePlan)==='premium' ? "active": "")}/>
             </div>
           </div>
@@ -218,7 +229,7 @@ const Component = styled.section`
                     color: #737373;
                     font-weight: 600;
                     font-size: 1rem;
-
+                    text-align: center;
                     &.active {
                         color: #e50914;
                     }

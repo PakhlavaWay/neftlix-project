@@ -13,7 +13,7 @@ const Enjoy = () => {
             Blu-ray players, and more.
           </p>
         </div>
-        <div className="enjoy__image">
+        <div className="enjoy__image enjoy-create-img">
           <img
             src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/tv.png"
             alt="video frame"
@@ -65,6 +65,7 @@ const Component = styled.div`
         z-index: 2;
         position: relative;
         width: 100%;
+        margin: 0 auto;
       }
 
       .enjoy__container {

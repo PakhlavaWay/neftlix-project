@@ -11,7 +11,7 @@ module.exports = {
         xlg: '960px',
       },
       gridTemplateColumns: {
-        footer: 'repeat(auto-fill, minmax(150px, 1fr))',
+        footer: 'repeat(auto-fill, minmax(200px, 1fr))',
       }
     },
   },

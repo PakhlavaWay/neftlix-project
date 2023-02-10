@@ -4,11 +4,11 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
 
-
+/* Responsive Design */
 @layer components {
   /* user page(not guest) */
   html:has(.main__user){
-    @apply xs:text-[1.13vw] md:text-[1.15vw] lg:text-[1.2vw] xl:text-[1.25vw] 2xl:text-[1.4vw];
+    @apply xxs:text-[1.1vw] xs:text-[1.13vw] md:text-[1.15vw] lg:text-[1.2vw] xl:text-[1.25vw] 2xl:text-[1.4vw];
   }
   /* main guest page */
   .main__guest-page h1 {
@@ -24,6 +24,9 @@
   .enjoy-create-text {
     @apply xxs:text-center xlg:text-left xxs:!w-full xlg:!w-[48%]
   }
+  .enjoy-create-img {
+    @apply xxs:!w-full xlg:!w-[48%]
+  }
   /* watch and download sections*/
   .watch-download {
     @apply xxs:flex-col-reverse xxs:!justify-center xlg:flex-row xlg:!justify-between
@@ -32,14 +35,53 @@
   .download__movie-title p:nth-child(1) {
     @apply xxs:text-[.9rem] xlg:text-[1.3rem]
   }
+  .watch-download-img {
+    @apply xxs:!w-full xlg:!w-[48%]
+  }
 
   .watch-download-text {
     @apply xxs:text-center xlg:text-left xxs:!w-full xlg:!w-[48%]
   }
 
+  /* Login page */
+  .main__container {
+    @apply xxs:!w-[90%] xlg:!w-[40%]
+  }
+
+  /* Sign up page Planform */
+  .plans__props {
+    @apply max-[640px]:!hidden sm:!flex;
+  }
+  .plan {
+    @apply max-[640px]:!grid-cols-3 relative !items-end;
+  }
+
+  .invis {
+    @apply max-[640px]:!hidden
+  }
+  .plans__names {
+    @apply max-[640px]:!grid-cols-3 !grid-rows-1
+  }
+
+  .resp-desc {
+    @apply max-[640px]:!block absolute top-0 left-0 right-0 ml-auto mr-auto text-center text-[.9rem] text-[#333];
+  }
   html, body {
     overflow-x: hidden!important;
+    min-width: 321px!important;
   }
+}
+
+@media screen and (min-height: 700px) {
+  .login {
+    height: 140vh!important;
+  };
+}
+
+@media screen and (min-height: 900px) {
+  .login {
+    height: 120vh!important;
+  };
 }
 
 html, 

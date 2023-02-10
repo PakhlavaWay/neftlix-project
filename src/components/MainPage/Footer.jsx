@@ -56,7 +56,7 @@ const Component = styled.footer`
   height: auto;
   background-color: #000;
   .footer__wrapper {
-    width: 100%;
+    width: 90%;
     margin: 0 auto;
     height: 100%;
     display: grid;

@@ -105,7 +105,7 @@ const Component = styled.div`
     }
 
     form {
-      width: 70%;
+      width: 50%;
       height: auto;
       display: flex;
       justify-content: center;
@@ -118,25 +118,25 @@ const Component = styled.div`
         position: relative;
         .input-container {
           position: relative;
-          height: 80%;
+          height: 100%;
           width: 70%;
           align-self: end;
 
           & input {
             height: 100%;
             width: 100%;
-            padding: 10px 8px;
+            padding: 12px 8px 0;
             border: none;
             outline: none;
 
             &:focus ~ label {
-              top: 0;
+              top: 10px;
               font-size: 0.8rem;
               font-weight: 700;
             }
 
             &:not(:placeholder-shown) ~ label {
-              top: 0;
+              top: 10px;
               font-size: 0.8rem;
               font-weight: 700;
             }
@@ -145,10 +145,10 @@ const Component = styled.div`
           & label {
             color: #8c8c8c;
             position: absolute;
-            top: 35%;
             padding: 0 8px;
             pointer-events: none;
             left: 0;
+            top: 50%;
             transform: translateY(-50%);
             font-size: 0.9rem;
             transition: font 0.1s ease, top 0.1s ease, transform 0.1s ease;

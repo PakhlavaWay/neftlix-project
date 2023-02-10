@@ -9,6 +9,7 @@ import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
 const Header = () => {
   const [language, setLanguage] = useState("English");
   const [langMode, setLangMode] = useState(false);
+
   return (
     <Component className="wrapper">
       <header
@@ -25,13 +26,13 @@ const Header = () => {
         <div className="header__sign-in">
           <div
             onClick={() => setLangMode(!langMode)}
-            className="hover:cursor-pointer relative !h-12"
+            className="hover:cursor-pointer relative"
           >
             <LanguageIcon style={{ color: "white", height: "1rem" }} />
             <div className="text-white !border-none xxs:!hidden sm:!block">{language}</div>
             <div
               className={`select !border-4 !border-solid !bg-white ${
-                langMode ? "!absolute top-10 right-0 !flex !flex-col !justify-center" : "!hidden"
+                langMode ? "!absolute top-9 right-0 !flex !flex-col !items-start" : "!hidden"
               }`}
             >
               <p className="!text-base !text-gray-500 hover:!text-gray-700" onClick={() => setLanguage("English")}>English</p>
@@ -43,7 +44,7 @@ const Header = () => {
               <ArrowDropDownIcon className="text-white" />
             )}
           </div>
-          <NavLink to="/login">Sign In</NavLink>
+          <NavLink to="/login" className="flex items-center">Sign In</NavLink>
         </div>
       </header>
     </Component>
@@ -72,7 +73,7 @@ const Component = styled.div`
         position: relative;
       }
       a {
-        padding: 10px 15px;
+        padding: 5px 15px!important;
         background-color: red;
         color: white;
         font-size: 1rem;

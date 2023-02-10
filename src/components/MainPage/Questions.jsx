@@ -98,30 +98,33 @@ const Questions = () => {
             Ready to watch? Enter your email to create or restart your
             membership.
           </p>
-          <form className="get-started" onSubmit={handleSubmit}>
-            <div className="input-container">
-              <input
-                ref={inputRef}
-                type="email"
-                id="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-              />
-              <label htmlFor="email">Email address</label>
+          <form onSubmit={handleSubmit}>
+            <div className="get-started">
+              <div className="input-container">
+                <input
+                  ref={inputRef}
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder=" "
+                  onChange={(e) => setEmail(e.target.value)}
+                  value={email}
+                />
+                <label htmlFor="email">Email address</label>
+              </div>
             </div>
-
             <button type="submit">Get Started 〉</button>
             {touched ? (
               <p
                 style={{
                   fontSize: "0.93rem",
                   position: "absolute",
-                  bottom: "-45px",
+                  bottom: "-25px",
                   left: "0",
                   color: "#ffa00a",
                 }}
               >
-                Email is requied!
+                Email is required!
               </p>
             ) : null}
           </form>
@@ -134,8 +137,9 @@ const Questions = () => {
 const Component = styled.div`
   background-color: #000;
   border-bottom: 8px solid #222;
+  height: clamp(100vh, auto, 150vh);
   section {
-    height: auto;
+    height: inherit;
 
     .questions__start {
       text-align: center;
@@ -145,50 +149,62 @@ const Component = styled.div`
         margin-bottom: 20px;
       }
 
-      .get-started {
+      form {
+        width: 50%;
+        height: auto;
         display: flex;
         justify-content: center;
-        height: 60px;
-        width: 60%;
+        align-items: center;
         margin: 0 auto;
-        background-color: white;
-        position: relative;
-        .input-container {
+        .get-started {
+          height: 50px;
+          width: 100%;
+          background-color: white;
           position: relative;
-          height: 80%;
-          width: 70%;
-          align-self: end;
-
-          & input {
+          .input-container {
+            position: relative;
             height: 100%;
-            width: 100%;
-            padding: 10px 8px;
-            border: none;
-            outline: none;
-
-            &:focus ~ label {
-              top: 0;
-              font-size: 0.8rem;
-              font-weight: 700;
+            width: 70%;
+            align-self: end;
+  
+            & input {
+              height: 100%;
+              width: 100%;
+              padding: 12px 8px 0;
+              border: none;
+              outline: none;
+  
+              &:focus ~ label {
+                top: 10px;
+                font-size: 0.8rem;
+                font-weight: 700;
+              }
+  
+              &:not(:placeholder-shown) ~ label {
+                top: 10px;
+                font-size: 0.8rem;
+                font-weight: 700;
+              }
+            }
+  
+            & label {
+              color: #8c8c8c;
+              position: absolute;
+              padding: 0 8px;
+              pointer-events: none;
+              left: 0;
+              top: 50%;
+              transform: translateY(-50%);
+              font-size: 0.9rem;
+              transition: font 0.1s ease, top 0.1s ease, transform 0.1s ease;
             }
           }
-
-          & label {
-            color: #8c8c8c;
-            position: absolute;
-            top: 35%;
-            padding: 0 8px;
-            pointer-events: none;
-            left: 0;
-            transform: translateY(-50%);
-            font-size: 0.9rem;
-            transition: font 0.1s ease, top 0.1s ease, transform 0.1s ease;
-          }
         }
-
         button {
           width: 30%;
+          height: 50px;
           min-width: 170px;
+          box-shadow: 0 1px 0 rgb(0 0 0 / 45%);
           font-size: 1.6rem;
           // position: relative;
           padding: 5px;

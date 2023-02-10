@@ -19,7 +19,6 @@ const Regform = () => {
     console.log('submited');
     await new Promise((res) => setTimeout(res, 1000));
     dispatch(setEmailAC(values.email));
-    // dispatch(setPasswordAC(values.password));
 
     signUp(values);
     navigate("/signup/plan");
@@ -56,7 +55,7 @@ const Regform = () => {
   return (
     <Component>
       <Header action="Sign In" />
-      <section className="main">
+      <section className="main wrapper">
         <p>
           STEP <span>1</span> OF <span>3</span>
         </p>
@@ -139,15 +138,13 @@ const Component = styled.section`
   .main {
     padding: 30px 0;
     height: 55%;
-    max-width: 350px;
+    max-width: 400px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: start;
     justify-content: start;
     gap: 15px;
-    min-width: 350px;
-    max-width: 400px;
 
     p {
       span {

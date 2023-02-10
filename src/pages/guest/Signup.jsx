@@ -8,7 +8,7 @@ const Signup = () => {
   return (
     <Component>
         <Header action='Sign In' />
-        <section className='main'>
+        <section className='main wrapper'>
             <div className="main__image-container">
                 <img src="https://assets.nflxext.com/ffe/siteui/acquisition/simplicity/Devices.png" alt="" />
             </div>
@@ -28,7 +28,6 @@ const Component = styled.section`
     min-height: 150vh;
     .main {
         height: 55%;
-        min-width: 350px;
         max-width: 400px;
         margin: 0 auto;
         display: flex;
@@ -39,7 +38,8 @@ const Component = styled.section`
         .main__image-container {
             img {
                 background: no-repeat 50% 50%;
-                height: 90px;
+                height: auto;
+                width: inherit;
             }
         }
         p {

@@ -5,7 +5,7 @@ const Watch = () => {
   return (
     <Component>
       <section className="watch wrapper watch-download">
-        <div className="watch__image">
+        <div className="watch__image watch-download-img">
           <img
             src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/device-pile.png"
             alt="video frame"
@@ -58,6 +58,7 @@ const Component = styled.div`
         max-width: 100%;
         z-index: 2;
         position: relative;
+        margin: 0 auto;
       }
 
       .watch__container {

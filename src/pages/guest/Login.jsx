@@ -54,7 +54,7 @@ const Login = () => {
   return (
     <Component className='login'>
         <Header />
-        <main className="main">
+        <main className="login__main">
             <div className="main__container">
                 <h1>Sign In</h1>
                 <form onSubmit={handleSubmit}>
@@ -80,7 +80,7 @@ const Login = () => {
                 <div>
                     <div>
                         <p>New to Netflix?</p>
-                        <NavLink to='/'>Sign up now.</NavLink>
+                        <NavLink to='/signup'>Sign up now.</NavLink>
                     </div>
                     <p>
                         This page is protected by Google reCAPTCHA to ensure you're not a bot. <NavLink>Learn more.</NavLink>
@@ -94,12 +94,12 @@ const Login = () => {
 }
 
 const Component = styled.section`
-    min-height: 100vh;
+    min-height: 75vh;
     position: relative;
     z-index: 1;
-    main {
-        background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('https://assets.nflxext.com/ffe/siteui/vlv3/1ecf18b2-adad-4684-bd9a-acab7f2a875f/b917d571-224d-40fa-b55d-d20cc293f4c0/US-en-20230116-popsignuptwoweeks-perspective_alpha_website_large.jpg');
-        height: 160vh;
+    height: 160vh;
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('https://assets.nflxext.com/ffe/siteui/vlv3/1ecf18b2-adad-4684-bd9a-acab7f2a875f/b917d571-224d-40fa-b55d-d20cc293f4c0/US-en-20230116-popsignuptwoweeks-perspective_alpha_website_large.jpg');
+    .login__main {
         display: flex;
         justify-content: center;
 
@@ -109,13 +109,14 @@ const Component = styled.section`
                 font-size: 2rem;
             }
             background-color: rgba(0,0,0,.75);
-            width: 35%;
-            height: 90vh;
-            margin-top: 100px;
+            width: 40%;
+            height: inherit;
+            max-height: 60%;
             border-radius: 6px;
             padding: 60px;
-            min-width: 400px;
-            min-height: 660px;
+            margin: 120px auto 0;
+            display: flex;
+            flex-direction: column;
 
             form {
                 display: grid;

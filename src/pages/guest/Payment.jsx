@@ -18,7 +18,7 @@ const Payment = () => {
   return (
     <Component>
       <Header action={isAuthorized ? 'Sign Out': 'Sign In'} />
-      <section className="main">
+      <section className="main wrapper">
         <div className="main__img-container">
           <img
             src="https://assets.nflxext.com/ffe/siteui/acquisition/simplicity/Lock.png"

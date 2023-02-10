@@ -5,7 +5,7 @@ const Download = () => {
   return (
     <Component>
       <section className="download wrapper watch-download">
-        <div className="download__image">  
+        <div className="download__image watch-download-img">  
           <img
             src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/mobile-0819.jpg"
             alt="video frame"
@@ -54,8 +54,9 @@ const Component = styled.div`
       width: 48%;
       height: auto;
       img {
-          max-width: 100%;
-          height: auto;
+        max-width: 100%;
+        height: auto;
+        margin: 0 auto;
       }
       .download__card-animation {
         display: flex;
